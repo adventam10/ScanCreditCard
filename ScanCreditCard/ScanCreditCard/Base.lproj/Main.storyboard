@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScanCreditCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UN-tZ-gkt">
+                                <rect key="frame" x="165.66666666666666" y="409" width="62" height="34.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Scan"/>
+                                <connections>
+                                    <segue destination="0E6-CV-8Wo" kind="presentation" modalPresentationStyle="fullScreen" id="EFT-Gp-VQ7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-bk-Plh">
+                                <rect key="frame" x="176" y="75" width="41.333333333333343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2UN-tZ-gkt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JEF-LH-ARK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7bv-bk-Plh" secondAttribute="trailing" constant="8" id="Qpf-dm-SBF"/>
+                            <constraint firstItem="2UN-tZ-gkt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7bv-bk-Plh" secondAttribute="bottom" constant="8" id="RFI-Fy-Xeh"/>
+                            <constraint firstItem="7bv-bk-Plh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ZxW-mX-SGa"/>
+                            <constraint firstItem="7bv-bk-Plh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fm9-Is-RJ4"/>
+                            <constraint firstItem="2UN-tZ-gkt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gjG-oD-WbV"/>
+                            <constraint firstItem="7bv-bk-Plh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="vSs-ho-Olp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="7bv-bk-Plh" id="SUA-pi-yD6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40" y="4"/>
+        </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="fmj-U2-TwN">
+            <objects>
+                <viewController id="0E6-CV-8Wo" customClass="ScanViewController" customModule="ScanCreditCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MWb-aX-6Pp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cu5-Gl-cve" customClass="CardIOView">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dxb-js-pet"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dxb-js-pet" firstAttribute="trailing" secondItem="Cu5-Gl-cve" secondAttribute="trailing" id="PXK-sM-jCP"/>
+                            <constraint firstItem="Cu5-Gl-cve" firstAttribute="top" secondItem="dxb-js-pet" secondAttribute="top" id="Zhb-NM-WUk"/>
+                            <constraint firstItem="dxb-js-pet" firstAttribute="bottom" secondItem="Cu5-Gl-cve" secondAttribute="bottom" id="eYe-DC-45n"/>
+                            <constraint firstItem="Cu5-Gl-cve" firstAttribute="leading" secondItem="dxb-js-pet" secondAttribute="leading" id="qTX-zw-t3H"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cardIOView" destination="Cu5-Gl-cve" id="6eA-6o-8SM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ku6-Sv-efM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730" y="-25"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
